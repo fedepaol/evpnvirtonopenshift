@@ -2,7 +2,7 @@ kind: kcli_params
 metadata:
   name: fede
 tag: 4.19
-version: ci
+version: stable
 ctlplanes: 1
 workers: 2
 pool: default
@@ -15,21 +15,21 @@ vmrules:
   - ^.*ctlplane.*:
       nets:
         - name: default
-        - name: leaf2-node
+        - name: leafocp-node
           ip: 192.168.11.3
           gateway: 192.168.11.1
           netmask: 24
   - fedecluster-worker-0:
       nets:
         - name: default
-        - name: leaf2-node
+        - name: leafocp-node
           ip: 192.168.11.4
           gateway: 192.168.11.1
           netmask: 24
   - fedecluster-worker-1:
       nets:
         - name: default
-        - name: leaf2-node
+        - name: leafocp-node
           ip: 192.168.11.5
           gateway: 192.168.11.1
           netmask: 24
