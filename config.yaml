@@ -1,7 +1,7 @@
 kind: kcli_params
 metadata:
-  name: fede
-tag: 4.19
+  name: demo
+tag: 4.20
 version: stable
 ctlplanes: 1
 workers: 2
