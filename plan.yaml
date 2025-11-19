@@ -33,6 +33,7 @@ hostred:
   image: rhel9
   numcpus: 4
   memory: 512
+  rootpassword: foo
   nets:
     - name: leaf1-hostred
       ip: 192.168.10.3
@@ -44,6 +45,7 @@ hostgreen:
   image: rhel9
   numcpus: 4
   memory: 512
+  rootpassword: foo
   nets:
     - name: leaf1-hostgreen
       ip: 192.168.12.3
@@ -55,6 +57,7 @@ hostblue:
   image: rhel9
   numcpus: 4
   memory: 512
+  rootpassword: foo
   nets:
     - name: leaf1-hostblue
       ip: 192.168.13.3
@@ -66,6 +69,7 @@ leaf1:
   image: rhel9
   numcpus: 8
   memory: 2048
+  rootpassword: foo
   nets:
     - name: leaf1-spine
       ip: 192.168.1.2
@@ -99,6 +103,7 @@ spine:
   image: rhel9
   numcpus: 8
   memory: 2048
+  rootpassword: foo
   nets:
     - name: leaf1-spine
       ip: 192.168.1.3
