@@ -36,6 +36,7 @@ hostred:
   nets:
     - name: leaf1-hostred
       ip: 192.168.10.3
+      gateway: 192.168.10.1
       netmask: 24
   scripts:
     - hostred/setup.sh
@@ -46,6 +47,7 @@ hostgreen:
   nets:
     - name: leaf1-hostgreen
       ip: 192.168.12.3
+      gateway: 192.168.12.1
       netmask: 24
   scripts:
     - hostgreen/setup.sh
@@ -56,6 +58,7 @@ hostblue:
   nets:
     - name: leaf1-hostblue
       ip: 192.168.13.3
+      gateway: 192.168.13.1
       netmask: 24
   scripts:
     - hostblue/setup.sh
@@ -67,14 +70,18 @@ leaf1:
     - name: leaf1-spine
       ip: 192.168.1.2
       netmask: 24
+      gateway: 192.168.1.1
     - name: leaf1-hostred
       ip: 192.168.10.2
+      gateway: 192.168.10.1
       netmask: 24
     - name: leaf1-hostgreen
       ip: 192.168.12.2
+      gateway: 192.168.12.1
       netmask: 24
     - name: leaf1-hostblue
       ip: 192.168.13.2
+      gateway: 192.168.13.1
       netmask: 24
     - name: default
   files:
@@ -95,10 +102,12 @@ spine:
   nets:
     - name: leaf1-spine
       ip: 192.168.1.3
+      gateway: 192.168.1.1
       netmask: 24
     - name: leaf2-spine
       ip: 192.168.2.3
       netmask: 24
+      gateway: 192.168.2.1
     - name: default
   files:
   - path: /tmp/frr
@@ -117,9 +126,11 @@ leaf2:
   nets:
     - name: leaf2-node
       ip: 192.168.11.2
+      gateway: 192.168.11.1
       netmask: 24
     - name: leaf2-spine
       ip: 192.168.2.2
+      gateway: 192.168.2.1
       netmask: 24
     - name: default
   files:
