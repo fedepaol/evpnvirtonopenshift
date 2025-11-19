@@ -27,7 +27,6 @@ host:
   nets:
     - name: prov-leaf-host
       ip: 192.168.10.3
-      gateway: 192.168.10.1
       netmask: 24
   scripts:
     - host/setup.sh
@@ -39,11 +38,9 @@ prov-leaf:
   nets:
     - name: prov-leaf-spine
       ip: 192.168.1.2
-      gateway: 192.168.1.1
       netmask: 31
     - name: prov-leaf-host
       ip: 192.168.10.2
-      gateway: 192.168.10.1
       netmask: 31
     - name: default
   files:
@@ -65,11 +62,9 @@ spine:
   nets:
     - name: prov-leaf-spine
       ip: 192.168.1.3
-      gateway: 192.168.1.1
       netmask: 31
     - name: leafocp-spine
       ip: 192.168.1.4
-      gateway: 192.168.1.1
       netmask: 31
     - name: default
   files:
@@ -89,10 +84,8 @@ leafocp:
   nets:
     - name: leafocp-node
       ip: 192.168.11.2
-      gateway: 192.168.11.1
       netmask: 24
     - name: leafocp-spine
-      gateway: 192.168.1.1
       ip: 192.168.1.5
       netmask: 31
     - name: default
