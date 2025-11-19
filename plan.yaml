@@ -25,8 +25,9 @@ host:
   memory: 512
   rootpassword: foo
   nets:
+    - name: default
     - name: prov-leaf-host
-      ip: 192.168.10.3
+      ip: 192.170.1.2/24
       netmask: 24
   scripts:
     - host/setup.sh
@@ -40,8 +41,6 @@ prov-leaf:
       ip: 192.168.1.2
       netmask: 31
     - name: prov-leaf-host
-      ip: 192.168.10.2
-      netmask: 31
     - name: default
   files:
   - path: /tmp/frr
