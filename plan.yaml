@@ -27,7 +27,7 @@ host:
   nets:
     - name: default
     - name: prov-leaf-host
-      ip: 192.170.1.2/24
+      ip: 192.170.1.2
       netmask: 24
   scripts:
     - host/setup.sh
