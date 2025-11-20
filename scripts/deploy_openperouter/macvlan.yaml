@@ -1,0 +1,42 @@
+apiVersion: operator.openshift.io/v1
+kind: Network
+metadata:
+  name: cluster
+spec:
+  additionalNetworks:
+  - name: whereabouts-shim
+    namespace: default
+    rawCNIConfig: |-
+      {
+       "name": "whereabouts-shim",
+       "cniVersion": "0.3.1",
+       "type": "bridge",
+       "ipam": {
+         "type": "whereabouts"
+       }
+      }
+    type: Raw
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: underlay
+  namespace: openperouter-system
+spec:
+  config: |
+    {
+      "cniVersion": "0.3.1",
+      "name": "und",
+      "type": "macvlan",
+      "master": "ens4",
+      "mode": "bridge",
+      "ipam": {
+        "type": "whereabouts",
+        "range": "192.168.11.0/24",
+        "exclude": [
+           "192.168.11.4/32",
+           "192.168.11.5/32",
+           "192.168.11.2/32"
+        ]
+      }
+    }

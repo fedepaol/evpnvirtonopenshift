@@ -21,8 +21,6 @@ spec:
   asn: 64514
   evpn:
     vtepcidr: 100.65.0.0/24
-  nics:
-    - ens4
   neighbors:
     - asn: 64512
       address: 192.168.11.2
