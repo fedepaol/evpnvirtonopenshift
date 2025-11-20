@@ -22,7 +22,7 @@ leafocp-node:
 host:
   image: rhel9
   numcpus: 4
-  memory: 512
+  memory: 1024
   rootpassword: foo
   nets:
     - name: prov-leaf-host
