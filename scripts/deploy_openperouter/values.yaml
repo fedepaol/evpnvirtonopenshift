@@ -1,7 +1,4 @@
 openperouter:
   multusNetworkAnnotation:
       '[{ "name": "underlay", "namespace": "openperouter-system" }]'
-  image:
-    repository: quay.io/fpaoline/router
-    tag: multussupport
   cri: crio
